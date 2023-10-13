@@ -9,11 +9,12 @@ function MainNavbar() {
                 <a href="https://flowbite.com/" className="flex items-center">
                     <Image src="https://flowbite.com/docs/images/logo.svg" className="h-8 mr-3" alt="Flowbite Logo"
                            width={32} height={32}/>
-                    <span
-                        className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                    <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                        Flowbite
+                    </span>
                 </a>
 
-                <ThemeSwitcher/>
+                <ThemeSwitcher mode="toggle" className="w-8 h-8"/>
 
                 <div className="flex items-center md:order-2">
                     <button type="button"
@@ -54,7 +55,7 @@ function MainNavbar() {
                         </ul>
                     </div>
                     <button data-collapse-toggle="navbar-user" type="button"
-                            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                            className="inline-flex items-center p-2 w-10 h-8 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                             aria-controls="navbar-user" aria-expanded="false">
                         <span className="sr-only">Open main menu</span>
                         <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
