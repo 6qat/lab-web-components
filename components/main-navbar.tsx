@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from "next/image";
+import ThemeSwitcher from "@/components/theme-switcher";
 
 function MainNavbar() {
     return (
@@ -11,6 +12,9 @@ function MainNavbar() {
                     <span
                         className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
                 </a>
+
+                <ThemeSwitcher/>
+
                 <div className="flex items-center md:order-2">
                     <button type="button"
                             className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"

@@ -1,11 +1,12 @@
 import type {Metadata} from 'next'
 import {Inter} from 'next/font/google'
 import React from 'react'
-
-import './globals.css'
 import {Toaster as HotToaster} from "react-hot-toast";
 import {Toaster as ChadCnToaster} from "@/components/ui/toaster"
 import MainNavbar from "@/components/main-navbar";
+import {ThemeProvider} from "@/components/theme-provider";
+
+import './globals.css'
 
 const inter = Inter({subsets: ['latin']})
 
@@ -16,12 +17,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
         <body className={`${inter.className} `}>
-        <HotToaster/>
-        <ChadCnToaster/>
-        <MainNavbar/>
-        {children}
+        <ThemeProvider attribute="class">
+            <HotToaster/>
+            <ChadCnToaster/>
+            <MainNavbar/>
+            {children}
+        </ThemeProvider>
         </body>
         </html>
     )
