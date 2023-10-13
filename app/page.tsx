@@ -1,10 +1,44 @@
 "use client"
 import {Button} from "@/components/ui/button";
 import {ReloadIcon} from "@radix-ui/react-icons";
-import {notifications} from '@mantine/notifications';
 
-import {rem} from '@mantine/core';
-import {IconBrandMantine} from "@tabler/icons-react";
+// https://react-hot-toast.com/docs/toast
+import toast from "react-hot-toast";
+import {XCircle} from "lucide-react";
+
+const notify1 = () => toast('Hey there, your code is awesome!', {
+    // duration: Infinity,
+    duration: 4000,
+
+    position: 'top-center',
+
+    // Styling
+    style: {},
+    className: '',
+
+    // Custom Icon
+    icon: '👏',
+
+    // Change colors of success/error/loading icon
+    iconTheme: {
+        primary: '#000',
+        secondary: '#fff',
+    },
+
+})
+
+const notify2 = () => toast((t) => (
+
+    <span className="flex items-center">
+    Custom and <b>bold</b>
+    <button className="ml-2" onClick={() => toast.dismiss(t.id)}>
+      <XCircle className="ml-5"/>
+    </button>
+    </span>
+    
+), {
+    duration: Infinity,
+});
 
 export default function Home() {
     return (
@@ -21,20 +55,14 @@ export default function Home() {
             </div>
             <Button
                 variant="outline"
-                onClick={() =>
-                    notifications.show({
-                        title: 'Default notification',
-                        message: 'Hey there, your code is awesome! 🤥',
-                    })
-                }
-            >
-                Show notification
+                onClick={notify1}>
+                Show notification 1
             </Button>
-            <IconBrandMantine
-                style={{width: rem(80), height: rem(80)}}
-                stroke={1.2}
-                color="var(--mantine-color-blue-filled)"
-            />
+            <Button
+                variant="outline"
+                onClick={notify2}>
+                Show notification 2
+            </Button>
         </main>
     )
 }
