@@ -3,6 +3,11 @@ import type {Metadata} from 'next'
 import {Inter} from 'next/font/google'
 import React from 'react'
 
+import '@mantine/core/styles.css';
+import '@mantine/notifications/styles.css';
+import {MantineProvider} from "@mantine/core";
+import {Notifications as MantineNotifications} from "@mantine/notifications";
+
 const inter = Inter({subsets: ['latin']})
 
 export const metadata: Metadata = {
@@ -14,7 +19,10 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
         <html lang="en">
         <body className={inter.className}>
-        {children}
+        <MantineProvider>
+            <MantineNotifications position= "top-center" autoClose={false}/>
+            {children}
+        </MantineProvider>
         </body>
         </html>
     )

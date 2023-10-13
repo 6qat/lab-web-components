@@ -1,5 +1,7 @@
+"use client"
 import {Button} from "@/components/ui/button";
 import {ReloadIcon} from "@radix-ui/react-icons";
+import {notifications} from '@mantine/notifications';
 
 export default function Home() {
     return (
@@ -14,6 +16,17 @@ export default function Home() {
                     Please wait
                 </Button>
             </div>
+            <Button
+                variant="outline"
+                onClick={() =>
+                    notifications.show({
+                        title: 'Default notification',
+                        message: 'Hey there, your code is awesome! 🤥',
+                    })
+                }
+            >
+                Show notification
+            </Button>
         </main>
     )
 }
