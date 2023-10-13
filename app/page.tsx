@@ -3,6 +3,9 @@ import {Button} from "@/components/ui/button";
 import {ReloadIcon} from "@radix-ui/react-icons";
 import {notifications} from '@mantine/notifications';
 
+import {rem} from '@mantine/core';
+import {IconBrandMantine} from "@tabler/icons-react";
+
 export default function Home() {
     return (
         <main className="">
@@ -27,6 +30,11 @@ export default function Home() {
             >
                 Show notification
             </Button>
+            <IconBrandMantine
+                style={{width: rem(80), height: rem(80)}}
+                stroke={1.2}
+                color="var(--mantine-color-blue-filled)"
+            />
         </main>
     )
 }
