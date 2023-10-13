@@ -5,6 +5,7 @@ import React from 'react'
 import './globals.css'
 import {Toaster as HotToaster} from "react-hot-toast";
 import {Toaster as ChadCnToaster} from "@/components/ui/toaster"
+import MainNavbar from "@/components/main-navbar";
 
 const inter = Inter({subsets: ['latin']})
 
@@ -19,6 +20,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
         <body className={`${inter.className} `}>
         <HotToaster/>
         <ChadCnToaster/>
+        <MainNavbar/>
         {children}
         </body>
         </html>
