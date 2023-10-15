@@ -22,7 +22,7 @@ function MainNavbar() {
                             id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
                             data-dropdown-placement="bottom">
                         <span className="sr-only">Open user menu</span>
-                        <Image className="w-8 h-8 rounded-full" src="https://placekitten.com/32/32"
+                        <Image className="w-8 h-8 rounded-full" src="https://i.pravatar.cc/32"
                                alt="user photo" width={32} height={32}/>
                     </button>
                     {/*Dropdown menu*/}

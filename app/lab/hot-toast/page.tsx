@@ -29,6 +29,8 @@ const notify1 = () => toast('Hey there, your code is awesome!', {
 
 const notify2 = () => toast((t) => (
 
+    
+
     <span className="flex items-center">
     Custom and <b>bold</b>
     <button className="ml-2" onClick={() => toast.dismiss(t.id)}>
@@ -39,6 +41,22 @@ const notify2 = () => toast((t) => (
 ), {
     duration: Infinity,
 });
+
+const notify3 = () => toast.success('Success notification', {
+    duration: 4000,
+    position: 'top-center',
+    icon: '👏',
+    style: {
+        background: '#333',
+        color: '#fff',
+    },
+    iconTheme: {
+        primary: '#fff',
+        secondary: '#333',
+    },
+});
+
+
 
 export default function HotToast() {
     return (
@@ -55,6 +73,10 @@ export default function HotToast() {
                 onClick={notify2}>
                 Show notification 2
             </Button>
+            <button className="btn"
+                onClick={notify3}>
+                Show notification 3
+            </button>
         </main>
     )
 }
