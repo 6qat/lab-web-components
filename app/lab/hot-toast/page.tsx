@@ -43,7 +43,7 @@ const notify2 = () => toast((t) => (
 });
 
 const notify3 = () => toast.success('Success notification', {
-    duration: 4000,
+    duration: Infinity,
     position: 'top-center',
     icon: '👏',
     style: {
