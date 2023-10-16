@@ -12,10 +12,14 @@ type ThemeSwitcherProps = {
     className?: string,
 }
 
-const SunOrMoon = () => (
+type SunOrMoonProps = {
+    className?: string,
+}
+
+const SunOrMoon = ({className}: SunOrMoonProps) => (
     <div className={`flex flex-1 justify-center items-center`}>
-        <Sun className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"/>
-        <Moon className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"/>
+        <Sun className={`rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 ${className}`}/>
+        <Moon className={`absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 ${className}`}/>
     </div>
 )
 
@@ -36,8 +40,8 @@ export default function ThemeSwitcher({mode, className}: ThemeSwitcherProps) {
         (mode === "dropdown") ? (
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                        <Button variant="outline" className={`${className}`}>
-                            <SunOrMoon/>
+                        <Button variant="outline">
+                            <SunOrMoon className={`${className}`}/>
                         </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
@@ -64,7 +68,7 @@ export default function ThemeSwitcher({mode, className}: ThemeSwitcherProps) {
                         else setTheme("light")
                     }
                     }>
-                    <SunOrMoon/>
+                    <SunOrMoon className={`${className}`}/>
                 </Button>
             )
     )

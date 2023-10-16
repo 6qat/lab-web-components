@@ -7,6 +7,7 @@ import MainNavbar from "@/components/main-navbar";
 import {ThemeProvider} from "@/components/theme-provider";
 
 import './globals.css'
+import MainNavbar2 from "@/components/main-navbar2";
 
 const inter = Inter({subsets: ['latin']})
 
@@ -22,7 +23,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
         <ThemeProvider attribute="class" disableTransitionOnChange >
             <HotToaster/>
             <ChadCnToaster/>
-            <MainNavbar/>
+            <MainNavbar2/>
             {children}
         </ThemeProvider>
         </body>
