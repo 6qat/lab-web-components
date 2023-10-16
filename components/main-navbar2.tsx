@@ -62,11 +62,11 @@ export default function MainNavbar2() {
                 <Navbar.Toggle/>
             </div>
             <Navbar.Collapse className="md:block">
-                <NavbarLink href="/" active>Home</NavbarLink>
-                <NavbarLink href="#">About</NavbarLink>
-                <NavbarLink href="#">Services</NavbarLink>
-                <NavbarLink href="#">Pricing</NavbarLink>
-                <NavbarLink href="#">Contact</NavbarLink>
+                <Navbar.Link href="/" active>Home</Navbar.Link>
+                <Navbar.Link href="#">About</Navbar.Link>
+                <Navbar.Link href="#">Services</Navbar.Link>
+                <Navbar.Link href="#">Pricing</Navbar.Link>
+                <Navbar.Link href="#">Contact</Navbar.Link>
             </Navbar.Collapse>
         </Navbar>
     )

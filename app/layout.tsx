@@ -3,7 +3,6 @@ import {Inter} from 'next/font/google'
 import React from 'react'
 import {Toaster as HotToaster} from "react-hot-toast";
 import {Toaster as ChadCnToaster} from "@/components/ui/toaster"
-import MainNavbar from "@/components/main-navbar";
 import {ThemeProvider} from "@/components/theme-provider";
 
 import './globals.css'
