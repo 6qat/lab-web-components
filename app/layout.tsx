@@ -3,10 +3,11 @@ import {Inter} from 'next/font/google'
 import React from 'react'
 import {Toaster as HotToaster} from "react-hot-toast";
 import {Toaster as ChadCnToaster} from "@/components/ui/toaster"
-import {ThemeProvider} from "@/components/theme-provider";
+import {Providers} from "@/components/providers";
 
 import './globals.css'
 import MainNavbar2 from "@/components/main-navbar2";
+
 
 const inter = Inter({subsets: ['latin']})
 
@@ -19,12 +20,12 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
         <html lang="en" suppressHydrationWarning>
         <body className={`${inter.className} `}>
-        <ThemeProvider attribute="class" disableTransitionOnChange >
+        <Providers attribute="class" disableTransitionOnChange>
             <HotToaster/>
             <ChadCnToaster/>
             <MainNavbar2/>
             {children}
-        </ThemeProvider>
+        </Providers>
         </body>
         </html>
     )
