@@ -55,9 +55,11 @@ const Form = () => {
                        onChange={handleChange}
                 />
             </form>
+
             <p>
                 {JSON.stringify(form)}
             </p>
+
         </>
     );
 };
