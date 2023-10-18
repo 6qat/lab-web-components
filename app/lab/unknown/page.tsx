@@ -6,7 +6,8 @@ import {Button} from "@/components/ui/button";
 
 const resend = new Resend("re_ThiRe8Xe_71McV6KDikyhr9pKhgJKPUMf")
 
-const getErrorMessage = (error: unknown): string => {
+ // This code snippet defines a function called `extractErrorMessage` that takes an `error` parameter and returns a string message. It checks the type of the `error` parameter and assigns the appropriate message based on the type. If the type is not recognized
+const extractErrorMessage = (error: unknown): string => {
     let message: string;
     if (error instanceof Error) {
         message = error.message;
@@ -32,7 +33,7 @@ const sendEmail = async () => {
 
     } catch (error) {
 
-        let message = getErrorMessage(error);
+        let message = extractErrorMessage(error);
         console.log(message);
         return {
             message,
