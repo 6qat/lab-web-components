@@ -1,7 +1,5 @@
 import type {Config} from 'tailwindcss'
 
-const {nextui} = require("@nextui-org/react");
-
 const config: Config = {
     darkMode: ["class"],
     content: [
@@ -79,7 +77,6 @@ const config: Config = {
     plugins: [
         require("tailwindcss-animate"),
         require('flowbite/plugin'),
-        // nextui()
     ],
 
 }
