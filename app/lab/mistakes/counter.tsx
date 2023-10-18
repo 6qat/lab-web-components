@@ -1,16 +1,15 @@
-"use client"
+'use client';
 
-import React, {useState} from 'react';
-import {Button} from "@/components/ui/button";
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
 
 function Counter() {
-
     const [count, setCount] = useState(0);
     const handleClick = () => {
-        setCount(prev => prev + 1);
-        setCount(prev => prev + 1);
-        setCount(prev => prev + 1);
-    }
+        setCount((prev) => prev + 1);
+        setCount((prev) => prev + 1);
+        setCount((prev) => prev + 1);
+    };
 
     return (
         <>

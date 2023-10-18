@@ -1,18 +1,17 @@
-"use client"
+'use client';
 
-import React, {useState} from 'react';
-import {Button} from "@/components/ui/button";
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
 
 const PRICE_PER_ITEM = 5;
 
 const Cart = () => {
-
     const [quantity, setQuantity] = useState(1);
     const totalPrice = PRICE_PER_ITEM * quantity;
 
     const handleClick = () => {
         setQuantity(quantity + 1);
-    }
+    };
 
     return (
         <div>

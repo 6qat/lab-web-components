@@ -1,26 +1,20 @@
-"use client"
+'use client';
 
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 type ProductCardProps = {
     id?: string;
-}
+};
 
 // @ts-ignore
-function ProductCard({id}: ProductCardProps) {
+function ProductCard({ id }: ProductCardProps) {
+    const [something, setSomething] = useState('blabla');
 
-    const [something, setSomething] = useState('blabla')
-
-    useEffect(() => {
-
-    }, [something]);
+    useEffect(() => {}, [something]);
 
     return (
-        <section>
-            {!id ? "No ID provided." : <div>Product Card</div>}
-        </section>
-    )
-
+        <section>{!id ? 'No ID provided.' : <div>Product Card</div>}</section>
+    );
 }
 
 export default ProductCard;
