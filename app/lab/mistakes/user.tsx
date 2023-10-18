@@ -7,10 +7,17 @@ function User() {
 
     const [user, setUser,] = useState({name: "", city: "", age: 50});
 
+    function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+        setUser(prev => ({...prev, name: e.target.value}));
+    }
+
     return (
-        <form>
-            <Input type="text" placeholder="Your Name"/>
-        </form>
+        <>
+            <form>
+                <Input type="text" onChange={handleChange} placeholder="Your Name"/>
+            </form>
+            <p>{JSON.stringify(user)}</p>
+        </>
     );
 }
 
