@@ -4,6 +4,7 @@ import ProductCard from "@/app/lab/mistakes/product-card";
 import User from "@/app/lab/mistakes/user";
 import {Separator} from "@/components/ui/separator";
 import Form from "@/app/lab/mistakes/form";
+import Cart from "@/app/lab/mistakes/cart";
 
 function Page() {
     return (
@@ -16,6 +17,8 @@ function Page() {
             <User/>
             <Separator className="my-6 h-2"/>
             <Form/>
+            <Separator className="my-6 h-2"/>
+            <Cart/>
             <Separator className="my-6 h-2"/>
             
         </>

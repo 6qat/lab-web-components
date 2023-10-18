@@ -22,7 +22,8 @@ const Form = () => {
         const value = e.target.value;
         setForm(prev =>
             ({
-                ...prev, [e.target.name]: value
+                ...prev,
+                [e.target.name]: value
             })
         );
     }
