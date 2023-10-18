@@ -5,7 +5,7 @@ import {Input} from "@/components/ui/input";
 
 function User() {
 
-    const [user, setUser,] = useState({name: "", city: "", age: 50});
+    const [user, setUser,] = useState({name: "", city: "Belo Horizonte", age: 47});
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
         setUser(prev => ({...prev, name: e.target.value}));
