@@ -9,10 +9,11 @@ type TPost = {
 function BlogPost() {
     console.log('Rendering component.');
 
-    const [post, setPost] = useState<TPost>({
-        title: '',
-        body: '',
-    });
+    // const [post, setPost] = useState<TPost>({
+    //     title: '',
+    //     body: '',
+    // });
+    const [post, setPost] = useState<TPost | null>(null);
 
     const [loading, setLoading] = useState(true);
 
@@ -33,8 +34,8 @@ function BlogPost() {
                 <p>Loading...</p>
             ) : (
                 <>
-                    <h1 className='text-2xl'>{post.title}</h1>
-                    <p>{post.body}</p>
+                    <h1 className='text-2xl'>{post?.title}</h1>
+                    <p>{post?.body}</p>
                 </>
             )}
         </>
