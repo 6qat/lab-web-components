@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 
 // Primitives vs non-primitives values
 const Price = () => {
-    console.log('Rendering component.');
+    // console.log('Rendering component.');
 
     const [price, setPrice] = useState({
         number: 100,
@@ -13,9 +13,9 @@ const Price = () => {
     });
 
     useEffect(() => {
-        console.log('Component mounted.');
+        // console.log('Component mounted.');
         return () => {
-            console.log('Component unmounted.');
+            // console.log('Component unmounted.');
         };
     }, [price.number]); // BEWARE NOT to depend on non-primitives values !!!!!
 

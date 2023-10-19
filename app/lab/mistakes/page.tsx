@@ -6,6 +6,7 @@ import { Separator } from '@/components/ui/separator';
 import Form from '@/app/lab/mistakes/form';
 import Cart from '@/app/lab/mistakes/cart';
 import Price from '@/app/lab/mistakes/price';
+import BlogPost from '@/app/lab/mistakes/blog-post';
 
 // https://www.youtube.com/watch?v=-yIsQPp31L0
 function Page() {
@@ -24,9 +25,10 @@ function Page() {
             <Separator className='my-6 h-2' />
             <Price />
             <Separator className='my-6 h-2' />
+            <BlogPost />
+            <Separator className='my-6 h-2' />
         </>
     );
 }
 
 export default Page;
-
