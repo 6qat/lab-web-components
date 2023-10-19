@@ -3,28 +3,7 @@
 import { Avatar, Dropdown, Navbar } from 'flowbite-react';
 import Image from 'next/image';
 import React from 'react';
-import { useNavbarContext } from 'flowbite-react/lib/esm/components/Navbar/NavbarContext';
 import ThemeSwitcher from '@/components/theme-switcher';
-
-type NavbarLinkProps = {
-    href: string;
-    active?: boolean;
-    children: React.ReactNode;
-};
-
-const NavbarLink = ({ children, ...rest }: NavbarLinkProps) => {
-    const { isOpen, setIsOpen } = useNavbarContext();
-
-    const handleClick = () => {
-        setIsOpen(!isOpen);
-    };
-
-    return (
-        <Navbar.Link {...rest} onClick={handleClick}>
-            {children}
-        </Navbar.Link>
-    );
-};
 
 export default function MainNavbar2() {
     return (
@@ -86,5 +65,3 @@ export default function MainNavbar2() {
         </Navbar>
     );
 }
-
-
