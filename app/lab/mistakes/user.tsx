@@ -11,7 +11,10 @@ function User() {
     });
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-        setUser((prev) => ({ ...prev, name: e.target.value }));
+        setUser((prev) => ({
+            ...prev,
+            name: e.target.value,
+        }));
     }
 
     return (
