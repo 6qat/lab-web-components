@@ -44,14 +44,19 @@ const PostBody = ({ id }: { id: number }) => {
 
 // https://swr.vercel.app/docs/typescript
 function PostBodyWithSWR({ id }: { id: number }) {
-    const fetcher: Fetcher<string, string> = (url) =>
-        fetch(url)
+    const fetcher: Fetcher<string, string > = (key) =>
+        fetch(key)
             .then((res) => res.json())
             .then((json) => json.body);
 
+    // const { data, error, isLoading, isValidating, mutate } = useSWR(key, fetcher, options)
     const { data, error, isLoading } = useSWR(
         `https://jsonplaceholder.typicode.com/posts/${id}`,
-        fetcher
+        fetcher,
+        {
+            dedupingInterval: 8000,
+            refreshInterval: 8000
+        }
     );
 
     if (error) return <div>failed to load</div>;
