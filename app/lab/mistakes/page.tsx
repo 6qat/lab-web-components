@@ -7,6 +7,7 @@ import Form from '@/app/lab/mistakes/form';
 import Cart from '@/app/lab/mistakes/cart';
 import Price from '@/app/lab/mistakes/price';
 import BlogPost from '@/app/lab/mistakes/blog-post';
+import CounterExample from '@/app/lab/mistakes/stale-closure';
 
 // https://www.youtube.com/watch?v=-yIsQPp31L0
 function Page() {
@@ -26,6 +27,8 @@ function Page() {
             <Price />
             <Separator className='my-6 h-2' />
             <BlogPost />
+            <Separator className='my-6 h-2' />
+            <CounterExample />
             <Separator className='my-6 h-2' />
         </>
     );
