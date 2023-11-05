@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "api": "json-server --watch db.json --delay 10 --port 3004"
+    "api": "json-server --watch db.json --delay 5000 --port 3004"
   },
   "dependencies": {
     "@mantine/hooks": "^7.1.3",
