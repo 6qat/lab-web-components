@@ -1,32 +1,43 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 
 // https://www.youtube.com/watch?v=ZqerXMzt-EY
 const HighLatency = () => {
     const [fetchStatus, setFetchStatus] = useState('idle');
     const [users, setUsers] = useState<unknown[]>([]);
+    const controllerRef = useRef<AbortController>();
 
     async function getUsers() {
         setFetchStatus('loading');
-        const controller = new AbortController();
+        controllerRef.current = new AbortController();
+        setUsers([]);
 
         const timeout = setTimeout(() => {
-            controller.abort();
-        }, 20000);
+            // controller.abort();
+            setFetchStatus('delayed');
+        }, 2000);
 
         return await fetch('http://localhost:3004/users', {
-            signal: controller.signal,
+            signal: controllerRef.current.signal,
         })
             .then((res) => res.json())
             .then((data) => {
                 setUsers(data);
                 setFetchStatus('idle');
             })
-            .catch((_) => setFetchStatus('error'))
+            .catch((e) => {
+                if (e.name === 'AbortError') setFetchStatus('aborted');
+                else setFetchStatus('error');
+            })
             .finally(() => {
                 clearTimeout(timeout);
             });
+    }
+
+    function cancelFetch() {
+        if (controllerRef.current) controllerRef.current.abort();
+        setFetchStatus('idle');
     }
 
     return (
@@ -35,14 +46,23 @@ const HighLatency = () => {
                 <Button onClick={getUsers}> Press Me</Button>
             ) : fetchStatus === 'loading' ? (
                 <Button disabled> Loading Users </Button>
+            ) : fetchStatus === 'aborted' ? (
+                <>
+                    <Button onClick={getUsers}> Press Me</Button>
+                    <p className={`text-red-500`}>Fetching aborted...</p>
+                </>
+            ) : fetchStatus === 'delayed' ? (
+                <>
+                    <Button disabled> DELAYED </Button>
+                    <Button onClick={cancelFetch}>Cancel fetch</Button>
+                </>
             ) : (
-                <Button disabled>Error</Button>
+                <>
+                    <Button onClick={getUsers}> Press Me</Button>
+                    <p>ERROR</p>
+                </>
             )}
-            <ul>
-                {users.map((user) => (
-                    <li key={user.id}>{user.name}</li>
-                ))}
-            </ul>
+            <pre>{JSON.stringify(users, null, 2)}</pre>
         </div>
     );
 };
