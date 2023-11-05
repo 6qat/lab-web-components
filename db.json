@@ -1,0 +1,28 @@
+{
+"users": [
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "doe@mail.com",
+    "phone": "1234567890",
+    "address": {
+      "street": "123 Main St",
+      "city": "New York",
+      "state": "NY",
+      "zip": "12345"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Juca",
+    "email": "juca@usa.net",
+    " phone ": " 1234567890 ",
+    "address": {
+      "street": " 123 Main St",
+      "city": "Florianopolis",
+      "state": " SC ",
+      "zip": "12345"
+    }
+  }
+]
+}
