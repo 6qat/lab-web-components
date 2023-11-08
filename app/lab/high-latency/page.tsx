@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 // https://www.youtube.com/watch?v=ZqerXMzt-EY
 const HighLatency = () => {
   const [fetchStatus, setFetchStatus] = useState('idle');
-  const [users, setUsers] = useState<unknown[]>([]);
+  const [users, setUsers] = useState([]);
   const controllerRef = useRef<AbortController>();
 
   async function getUsers() {
@@ -36,7 +36,7 @@ const HighLatency = () => {
   }
 
   function cancelFetch() {
-    if (controllerRef.current) controllerRef.current.abort();
+    controllerRef.current?.abort();
     setFetchStatus('idle');
   }
 

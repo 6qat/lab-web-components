@@ -4,6 +4,12 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'ws-public.interpol.int',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'tailwindui.com',
         port: '',
         pathname: '/**',
@@ -22,7 +28,7 @@ const nextConfig = {
       },
     ],
   },
-  reactStrictMode: false, // without this useEffect called twice in dev mode
+  reactStrictMode: true, // if true, useEffect called twice in dev mode
 };
 
 module.exports = nextConfig;
