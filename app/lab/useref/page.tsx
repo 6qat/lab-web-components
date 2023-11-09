@@ -2,6 +2,7 @@
 import { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 
+// https://react.dev/learn/referencing-values-with-refs
 export default function Stopwatch() {
   const [startTime, setStartTime] = useState<number | null>(null);
   const [now, setNow] = useState<number | null>(null);
@@ -40,6 +41,15 @@ export default function Stopwatch() {
         className={`ml-2`}
       >
         Stop
+      </Button>
+      <Button
+        onClick={() => {
+          setStartTime(null);
+          setNow(null);
+        }}
+        className={`ml-2`}
+      >
+        Clear
       </Button>
     </>
   );
