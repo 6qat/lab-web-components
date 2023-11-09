@@ -15,7 +15,7 @@ export default function Stopwatch() {
     clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
       setNow(Date.now());
-    }, 10) as unknown as number;
+    }, 200) as unknown as number;
   }
 
   function handleStop() {
@@ -44,6 +44,7 @@ export default function Stopwatch() {
       </Button>
       <Button
         onClick={() => {
+          clearInterval(intervalRef.current);
           setStartTime(null);
           setNow(null);
         }}
@@ -51,6 +52,93 @@ export default function Stopwatch() {
       >
         Clear
       </Button>
+      <hr className={`mb-2 mt-2`} />
+      <Form />
+      <hr className={`mb-2 mt-2`} />
+      <CatFriends />
+    </>
+  );
+}
+
+export function Form() {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  function handleClick() {
+    inputRef.current?.focus();
+  }
+
+  return (
+    <>
+      <input
+        ref={inputRef}
+        className={`mr-2 border-2`}
+      />
+      <Button onClick={handleClick}>Focus the input</Button>
+    </>
+  );
+}
+
+export function CatFriends() {
+  const firstCatRef = useRef<HTMLImageElement>(null);
+  const secondCatRef = useRef<HTMLImageElement>(null);
+  const thirdCatRef = useRef<HTMLImageElement>(null);
+
+  function handleScrollToFirstCat() {
+    firstCatRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'center',
+    });
+  }
+
+  function handleScrollToSecondCat() {
+    secondCatRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'center',
+    });
+  }
+
+  function handleScrollToThirdCat() {
+    thirdCatRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'center',
+    });
+  }
+
+  return (
+    <>
+      <nav>
+        <Button onClick={handleScrollToFirstCat}>Tom</Button>
+        <Button onClick={handleScrollToSecondCat}>Maru</Button>
+        <Button onClick={handleScrollToThirdCat}>Jellylorum</Button>
+      </nav>
+      <div>
+        <ul>
+          <li>
+            <img
+              src='https://placekitten.com/g/200/200'
+              alt='Tom'
+              ref={firstCatRef}
+            />
+          </li>
+          <li>
+            <img
+              src='https://placekitten.com/g/300/200'
+              alt='Maru'
+              ref={secondCatRef}
+            />
+          </li>
+          <li>
+            <img
+              src='https://placekitten.com/g/250/200'
+              alt='Jellylorum'
+              ref={thirdCatRef}
+            />
+          </li>
+        </ul>
+      </div>
     </>
   );
 }
